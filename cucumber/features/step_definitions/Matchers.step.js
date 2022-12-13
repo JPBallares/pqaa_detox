@@ -29,7 +29,11 @@ When('I tap on component with id {string}', async (id) => {
 });
 
 // match by multiple matchers
-When('I tap on element with type Text and text {string}', async (text) => {
+When('I tap on element with type and text {string}', async (text) => {
     const elType = device.getPlatform() === 'ios' ? 'RCTTextView' : 'android.widget.TextView';
     await element(by.type(elType).and(by.text(text))).tap();
+});
+
+When('I tap on element with trait and text {string}', async (text) => {
+    await element(by.traits(['staticText']).and(by.text(text))).tap();
 });
