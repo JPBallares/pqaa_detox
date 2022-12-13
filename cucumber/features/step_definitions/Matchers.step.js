@@ -22,3 +22,8 @@ When('I tap on component with label {string}', async (label) => {
         await element(by.label(label)).tap();
     }
 });
+
+// id matchers
+When('I tap on component with id {string}', async (id) => {
+    await element(by.id(id)).tap();
+});

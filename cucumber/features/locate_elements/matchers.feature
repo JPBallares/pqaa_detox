@@ -15,3 +15,10 @@ Feature: Element matchers
   Scenario: I can locate elements by label
     When I tap on component with label "waterCounterLabel"
     Then I tap on component with label "Home"
+
+  @matchers @id
+  Scenario: I can locate elements by id
+    When I tap on component with id "waterCounter"
+    And I tap on component with id "electricityCounter"
+    And I tap on component with id "gasCounter"
+    Then I tap on component with id "broadbandCounter"
