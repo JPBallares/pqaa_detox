@@ -7,10 +7,10 @@
     "ios:build": "react-native run-ios",
     "start": "react-native start",
     "detox:build:ios-debug": "detox build --configuration ios",
-    "detox:e2e:ios-debug": "DETOX_CONFIGURATION=ios npx cucumber-js",
+    "detox:e2e:ios-debug": "npm run detox:clean-framework; DETOX_CONFIGURATION=ios npx cucumber-js",
     "detox:build:android-debug": "detox build --configuration android",
     "detox:e2e:android-debug": "DETOX_CONFIGURATION=android npx cucumber-js",
-    "detox:clean-framework": "detox clean-framework-cache && detox build-framework-cache"
+    "detox:clean-framework": "detox clean-framework-cache; detox build-framework-cache"
   },
   "dependencies": {
     "@react-native-community/async-storage": "1.12.1",
