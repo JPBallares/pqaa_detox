@@ -27,3 +27,9 @@ When('I tap on component with label {string}', async (label) => {
 When('I tap on component with id {string}', async (id) => {
     await element(by.id(id)).tap();
 });
+
+// match by multiple matchers
+When('I tap on element with type Text and text {string}', async (text) => {
+    const elType = device.getPlatform() === 'ios' ? 'RCTTextView' : 'android.widget.TextView';
+    await element(by.type(elType).and(by.text(text))).tap();
+});

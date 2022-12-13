@@ -22,3 +22,7 @@ Feature: Element matchers
     And I tap on component with id "electricityCounter"
     And I tap on component with id "gasCounter"
     Then I tap on component with id "broadbandCounter"
+
+  @matchers @multiple
+  Scenario: I can locate elements by multiple matchers
+    When I tap on element with type Text and text "WATER COUNTER"
