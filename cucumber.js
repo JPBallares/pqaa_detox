@@ -1,6 +1,6 @@
 const arguments = [
     '--require-module @babel/register',
-    'e2e/features/*/*.feature'
+    'cucumber/features/*/*.feature'
 ].join(' ');
 
 module.exports = {
