@@ -26,4 +26,6 @@ Feature: Element matchers
   @matchers @multiple
   Scenario: I can locate elements by multiple matchers
     When I tap on element with type and text "WATER COUNTER"
-    When I tap on element with trait and text "ELECTRICITY COUNTER"
+    And I tap on element with trait and text "ELECTRICITY COUNTER"
+    And I tap on element with parent id and descendant text "GAS COUNTER"
+    Then I tap on element with child text "BROADBAND COUNTER" and ancestor type

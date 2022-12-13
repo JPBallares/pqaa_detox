@@ -37,3 +37,12 @@ When('I tap on element with type and text {string}', async (text) => {
 When('I tap on element with trait and text {string}', async (text) => {
     await element(by.traits(['staticText']).and(by.text(text))).tap();
 });
+
+When('I tap on element with parent id and descendant text {string}', async (text) => {
+    await element(by.id('counterButton').withDescendant(by.text(text))).tap();
+});
+
+When('I tap on element with child text {string} and ancestor type', async (text) => {
+    const elType = device.getPlatform() === 'ios' ? 'RCTView' : 'android.view.ViewGroup';
+    await element(by.text(text).withAncestor(by.type(elType))).tap();
+});
