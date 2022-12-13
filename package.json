@@ -9,7 +9,8 @@
     "detox:build:ios-debug": "detox build --configuration ios.sim.debug",
     "detox:e2e:ios-debug": "DETOX_CONFIGURATION=ios.sim.debug npx cucumber-js",
     "detox:build:android-debug": "detox build --configuration android.emu.debug",
-    "detox:e2e:android-debug": "DETOX_CONFIGURATION=android.emu.debug npx cucumber-js"
+    "detox:e2e:android-debug": "DETOX_CONFIGURATION=android.emu.debug npx cucumber-js",
+    "cucumber": "./node_modules/.bin/cucumber-js --require-module @babel/register ./cucumber/*.feature"
   },
   "dependencies": {
     "@react-native-community/async-storage": "1.12.1",
@@ -35,15 +36,15 @@
     "react-navigation-tabs": "2.11.1"
   },
   "devDependencies": {
-    "@babel/core": "7.15.5",
-    "@babel/register": "^7.18.9",
+    "@babel/core": "^7.9.0",
+    "@babel/register": "^7.15.3",
     "@babel/runtime": "7.15.4",
-    "@cucumber/cucumber": "^8.9.0",
+    "@cucumber/cucumber": "^7.3.1",
     "@react-native-community/eslint-config": "3.0.1",
     "babel-jest": "27.1.0",
-    "detox": "^20.0.3",
+    "detox": "^18.22.1",
     "eslint": "7.32.0",
-    "jest": "^29.3.1",
+    "jest": "^27.0.6",
     "metro-react-native-babel-preset": "0.66.2",
     "react-test-renderer": "17.0.2"
   },
