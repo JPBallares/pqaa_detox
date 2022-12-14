@@ -28,4 +28,5 @@ Feature: Element matchers
     When I tap on element with type and text "WATER COUNTER"
     And I tap on element with trait and text "ELECTRICITY COUNTER"
     And I tap on element with parent id and descendant text "GAS COUNTER"
-    Then I tap on element with child text "BROADBAND COUNTER" and ancestor type
+    And I tap on element with child text "BROADBAND COUNTER" and ancestor type
+    Then I tap on back button
