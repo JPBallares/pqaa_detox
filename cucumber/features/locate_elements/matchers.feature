@@ -18,9 +18,9 @@ Feature: Element matchers
 
   @matchers @id
   Scenario: I can locate elements by id
-    When I tap on component with id "waterCounter"
-    And I tap on component with id "electricityCounter"
-    And I tap on component with id "gasCounter"
+    When I tap 3 times on component with id "waterCounter"
+    And I long press on component with id "electricityCounter" for 2000 ms
+    And I tap at 2, 2 on component with id "gasCounter"
     Then I tap on component with id "broadbandCounter"
 
   @matchers @multiple

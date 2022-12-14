@@ -28,6 +28,18 @@ When('I tap on component with id {string}', async (id) => {
     await element(by.id(id)).tap();
 });
 
+When('I long press on component with id {string} for {int} ms', async (id, ms) => {
+    await element(by.id(id)).longPress(ms);
+});
+
+When('I tap {int} times on component with id {string}', async (n, id) => {
+    await element(by.id(id)).multiTap(n);
+});
+
+When('I tap at {int}, {int} on component with id {string}', async (x, y, id) => {
+    await element(by.id(id)).tap({ x, y });
+});
+
 // match by multiple matchers
 When('I tap on element with type and text {string}', async (text) => {
     const elType = device.getPlatform() === 'ios' ? 'RCTTextView' : 'android.widget.TextView';
