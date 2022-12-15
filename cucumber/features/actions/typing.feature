@@ -9,3 +9,5 @@ Feature: Typing into input elements
         And I type "Who" in "form-input-name"
         And I replace "Ami" in "form-input-surname"
         And I clear text in "form-input-surname"
+        And I tap backspace key in "form-input-name"
+        And I tap return key in "form-input-name"
