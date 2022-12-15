@@ -21,3 +21,7 @@ When('I tap backspace key in {string}', async (id) => {
 When('I tap return key in {string}', async (id) => {
     await element(by.id(id)).tapReturnKey();
 });
+
+When('I swiped {string} in {string}', async (direction, id) => {
+    await element(by.id(id)).swipe(direction);
+});
