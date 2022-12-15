@@ -22,6 +22,7 @@ ImagesScreen.navigationOptions = {
   title: 'Cities',
   tabBarIcon: <FontAwesome5 name="city" size={20} />,
   tabBarAccessibilityLabel: 'Cities',
+  tabBarTestID: 'cities-tab-nav',
 };
 
 export default ImagesScreen;

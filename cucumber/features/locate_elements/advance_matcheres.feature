@@ -30,3 +30,14 @@ Feature: Advance element matchers
         Then I should see component with id "members-header-title"
         When I tap on component with id "add-member-button"
         Then I should see component with id "add-member-header-title"
+
+    @advancematchers @dynamic
+    Scenario: Navigation tabs can be located
+        When I tap on component with id "cities-tab-nav"
+        Then I tap on the "<continent>" title and image
+
+        Examples:
+            | continent  |
+            | europe     |
+            | usa/canada |
+            | asia       |
