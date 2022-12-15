@@ -1,6 +1,6 @@
-import React, { useState} from 'react';
-import { ScrollView, SafeAreaView} from 'react-native';
-import { Button} from 'react-native-elements';
+import React, { useState } from 'react';
+import { ScrollView, SafeAreaView } from 'react-native';
+import { Button } from 'react-native-elements';
 import MemberFormInputFields from './MemberFormInputFields';
 import MemberFormDateFields from './MemberFormDateFields';
 import MemberFormTimeFields from './MemberFormTimeFields';
@@ -9,7 +9,7 @@ import MemberFormCalendarFields from './MemberFormCalendarFields';
 
 const emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
 
-const MemberForm = ({ onSubmit, initialValues}) => {
+const MemberForm = ({ onSubmit, initialValues }) => {
   const [name, setName] = useState(initialValues.name);
   const [surname, setSurname] = useState(initialValues.surname);
   const [email, setEmail] = useState(initialValues.email);
@@ -63,7 +63,7 @@ const MemberForm = ({ onSubmit, initialValues}) => {
 
   return (
     <ScrollView>
-      <SafeAreaView style={{margin: 5}}>
+      <SafeAreaView style={{ margin: 5 }}>
         <MemberFormInputFields
           labelAndPlaceholder="Name"
           inputValue={name}
@@ -72,6 +72,7 @@ const MemberForm = ({ onSubmit, initialValues}) => {
           isFailingValidation={!name}
           errorMessage="Please enter a valid name"
           isInError={fieldsOnError.includes('name')}
+          fieldName="name"
         />
 
         <MemberFormInputFields
@@ -82,6 +83,7 @@ const MemberForm = ({ onSubmit, initialValues}) => {
           isFailingValidation={!surname}
           errorMessage="Please enter a valid surname"
           isInError={fieldsOnError.includes('surname')}
+          fieldName="surname"
         />
         <MemberFormDateFields
           labelAndPlaceholder="Date of Birth"
@@ -108,6 +110,7 @@ const MemberForm = ({ onSubmit, initialValues}) => {
           isFailingValidation={!emailRegex.test(email)}
           errorMessage="Please enter a valid email"
           isInError={fieldsOnError.includes('email')}
+          fieldName="email"
         />
         <MemberFormInputFields
           labelAndPlaceholder="Address Line One"
@@ -119,6 +122,7 @@ const MemberForm = ({ onSubmit, initialValues}) => {
           isFailingValidation={!addressLineOne}
           errorMessage="Address line one is required"
           isInError={fieldsOnError.includes('addressLineOne')}
+          fieldName="address-1"
         />
         <MemberFormInputFields
           labelAndPlaceholder="Address Line Two"
@@ -127,6 +131,7 @@ const MemberForm = ({ onSubmit, initialValues}) => {
             setAddressLineTwo(addressLineTwo)
           }
           editableStatus={true}
+          fieldName="address-2"
         />
         <MemberFormInputFields
           labelAndPlaceholder="City"
@@ -136,6 +141,7 @@ const MemberForm = ({ onSubmit, initialValues}) => {
           isFailingValidation={!city}
           errorMessage="City is required"
           isInError={fieldsOnError.includes('city')}
+          fieldName="city"
         />
         <MemberFormInputFields
           labelAndPlaceholder="Postcode"
@@ -145,6 +151,7 @@ const MemberForm = ({ onSubmit, initialValues}) => {
           isFailingValidation={!postcode}
           errorMessage="Postcode is required"
           isInError={fieldsOnError.includes('postcode')}
+          fieldName="postcode"
         />
         <MemberFormPickerFields
           labelAndPlaceholder="Country"
@@ -154,6 +161,7 @@ const MemberForm = ({ onSubmit, initialValues}) => {
           isFailingValidation={!country}
           errorMessage="Country is required"
           isInError={fieldsOnError.includes('country') && !country}
+          fieldName="country"
         />
         <MemberFormCalendarFields
           labelAndPlaceholder="Start Date"
