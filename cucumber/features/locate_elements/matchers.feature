@@ -1,7 +1,7 @@
 Feature: Element matchers
-    Elements can be located by various matchers supported by detox
+  Elements can be located by various matchers supported by detox
 
-  Background: 
+  Background:
     Given I tap on the "Counters" section by text
 
   @matchers @text

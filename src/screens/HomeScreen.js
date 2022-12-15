@@ -12,21 +12,25 @@ const HomeScreen = ({ navigation }) => {
         navigationScreen={(onPress = () => navigation.navigate('Counters'))}
       />
       <HomeComponents
+        testID="member-home-component"
         text="Member List"
         background="#FAB7B2"
         navigationScreen={(onPress = () => navigation.navigate('Members'))}
       />
       <HomeComponents
+        testID="cities-home-component"
         text="Cities"
         background="#D6FAB2"
         navigationScreen={(onPress = () => navigation.navigate('Images'))}
       />
       <HomeComponents
+        testID="animation-home-component"
         text="Animation"
         background="#769FFF"
         navigationScreen={(onPress = () => navigation.navigate('Animation'))}
       />
       <HomeComponents
+        testID="extras-home-component"
         text="Extras"
         background="#FFEB57"
         navigationScreen={(onPress = () => navigation.navigate('Extras'))}
