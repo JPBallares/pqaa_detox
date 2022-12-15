@@ -8,3 +8,14 @@ Feature: Swiping can be carried out
         When I tap on component with id "add-member-button"
         And I swiped "up" in "formBackground"
         And I swiped "down" in "formBackground"
+
+    @actions @swiping @horizontal
+    Scenario: I swiped left and right on cities screen
+        Given I tap on home component with "cities" section
+        When I swiped "left" in "<continent>"
+        And I swiped "right" in "<continent>"
+        Examples:
+            | continent  |
+            | europe     |
+            | usa/canada |
+            | asia       |
