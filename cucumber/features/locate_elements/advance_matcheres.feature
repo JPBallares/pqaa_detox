@@ -12,3 +12,14 @@ Feature: Advance element matchers
             | cities    |
             | animation |
             | extras    |
+
+    @advancematchers @dynamic
+    Scenario: List element can be matched dynamically
+        Given I tap on home component with "cities" section
+        Then I tap on the "<continent>" title and image
+
+        Examples:
+            | continent  |
+            | europe     |
+            | usa/canada |
+            | asia       |

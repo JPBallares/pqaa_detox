@@ -2,28 +2,33 @@ import React from 'react';
 import { Text, View, StyleSheet, ScrollView, FlatList, Image } from 'react-native';
 import { europe, usacanada, asia } from '../data/countryData';
 
-const ImageComponents = ({title}) => {
+const ImageComponents = ({ title, listTestID }) => {
   const cities =
     title === 'Europe' ? europe : title === 'Asia' ? asia : usacanada;
 
   return (
-    <ScrollView>
+    <ScrollView testID={listTestID}>
       <View style={styles.headerContainer}>
-        <Text style={styles.headerText}>{title}</Text>
+        <Text style={styles.headerText} testID={`list-title-${listTestID}`}>
+          {title}
+        </Text>
       </View>
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
         keyExtractor={(city) => city.name}
         data={cities}
-        renderItem={({item}) => {
+        renderItem={({ item, index }) => {
           return (
             <View style={styles.imageContainer}>
-              <Text style={styles.imageText}>{item.name}</Text>
+              <Text style={styles.imageText} testID={`image-title-${listTestID}-${index}`}>
+                {item.name}
+              </Text>
               <Image
                 style={styles.image}
                 resizeMode={'cover'}
                 source={item.imagePath}
+                testID={`image-${listTestID}-${index}`}
               />
             </View>
           );
@@ -41,7 +46,7 @@ const styles = StyleSheet.create({
     height: 60,
     paddingTop: 15,
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     elevation: 2,
     position: 'relative',
