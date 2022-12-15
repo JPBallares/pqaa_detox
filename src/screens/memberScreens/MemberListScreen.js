@@ -89,10 +89,10 @@ const MemberListScreen = ({ navigation }) => {
 
 MemberListScreen.navigationOptions = ({ navigation }) => {
   return {
-    headerTitle: 'Members',
+    headerTitle: () => <Text testID='members-header-title'>Members</Text>,
     headerTitleAlign: 'center',
     headerRight: () => (
-      <TouchableOpacity onPress={() => navigation.navigate('AddMember')}>
+      <TouchableOpacity onPress={() => navigation.navigate('AddMember')} testID="add-member-button">
         <AntDesign style={{paddingRight: 15}} name="pluscircle" size={25} />
       </TouchableOpacity>
     )

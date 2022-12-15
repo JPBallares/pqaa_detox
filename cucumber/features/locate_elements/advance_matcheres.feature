@@ -23,3 +23,9 @@ Feature: Advance element matchers
             | europe     |
             | usa/canada |
             | asia       |
+
+    @advancematchers @dynamic
+    Scenario: Header elements can be matched dynamically
+        Given I tap on home component with "member" section
+        Then I should see component with id "members-header-title"
+        And I should see component with id "add-member-button"
