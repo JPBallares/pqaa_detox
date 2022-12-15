@@ -28,4 +28,5 @@ Feature: Advance element matchers
     Scenario: Header elements can be matched dynamically
         Given I tap on home component with "member" section
         Then I should see component with id "members-header-title"
-        And I should see component with id "add-member-button"
+        When I tap on component with id "add-member-button"
+        Then I should see component with id "add-member-header-title"
