@@ -25,3 +25,7 @@ When('I tap return key in {string}', async (id) => {
 When('I swiped {string} in {string}', async (direction, id) => {
     await element(by.id(id)).swipe(direction);
 });
+
+When('I scrolled {int}px {string} in {string}', async (px, direction, id) => {
+    await element(by.id(id)).scroll(px, direction);
+});
