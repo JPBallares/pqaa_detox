@@ -7,7 +7,7 @@ When('I type {string} in {string}', async (input, id) => {
 });
 
 When('I replace {string} in {string}', async (input, id) => {
-    await element(by.id(id)).typeText(input);
+    await element(by.id(id)).replaceText(input);
 });
 
 When('I clear text in {string}', async (id) => {
