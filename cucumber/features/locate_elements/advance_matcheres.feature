@@ -41,3 +41,11 @@ Feature: Advance element matchers
             | europe     |
             | usa/canada |
             | asia       |
+
+    @adnvacematchers @dynamic
+    Scenario: I can navigation in different navigation tabs
+        When I tap on component with id "cities-tab-nav"
+        Then I should see the "Europe" text
+        When I tap on component with id "home-tab-nav"
+        And I tap on component with id "members-tab-nav"
+        Then I should see component with id "add-member-button"

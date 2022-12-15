@@ -28,7 +28,8 @@ const homeFlow = createStackNavigator({
 homeFlow.navigationOptions = {
   title: 'Home',
   tabBarIcon: <FontAwesome5 name="home" size={20} />,
-  tabBarAccessibilityLabel: 'Home'
+  tabBarAccessibilityLabel: 'Home',
+  tabBarTestID: 'home-tab-nav',
 }
 
 const membersFlow = createStackNavigator({
@@ -41,7 +42,8 @@ const membersFlow = createStackNavigator({
 membersFlow.navigationOptions = {
   title: 'Members',
   tabBarIcon: <MaterialCommunityIcons name="wallet-membership" size={20} />,
-  tabBarAccessibilityLabel: 'Members'
+  tabBarAccessibilityLabel: 'Members',
+  tabBarTestID: 'members-tab-nav',
 }
 
 const switchNavigator = createSwitchNavigator({
